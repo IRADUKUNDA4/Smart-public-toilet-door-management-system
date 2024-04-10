@@ -443,6 +443,7 @@ h2 {
 }
 
 input[type="email"],
+input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
@@ -460,7 +461,20 @@ input[type="password"] {
   cursor: pointer;
 }
 
+.signup-btn{
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .login-btn:hover {
+  background-color: #45a049;
+}
+.signup-btn:hover {
   background-color: #45a049;
 }
  a {

@@ -1,5 +1,8 @@
 // add hovered class to selected list item
 let list = document.querySelectorAll(".navigation li");
+let button = document.querySelectorAll(".signup-btn");
+
+console.log("test form loaded")
 
 function activeLink() {
   list.forEach((item) => {
@@ -68,4 +71,20 @@ const table = document.querySelector('.details table');
 
 // Step 3: Iterate over the array of users and insert them into the table
 
- 
+// document.addEventListener('DOMContentLoaded', function() {
+  const loginForm = document.getElementById('loginForm');
+
+  button.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('consfirm_password').value;
+
+      console.log('Username:', username);
+      console.log('Email:', email);
+      console.log('Password:', password);
+      console.log('Confirm Password:', confirmPassword);
+  });
+// });
