@@ -26,7 +26,8 @@ toggle.onclick = function () {
 // Declare storedBlogs outside of the fetch call to make it accessible in the subsequent code
 let storedBlogs = [];
 
-fetch('https://public-bn.onrender.com/signup/')
+fetch('https://pink-worrisome-rabbit.cyclic.app/signup')
+// fetch('https://public-bn.onrender.com/signup/')
 .then(response => response.json())
 .then(async (resp) => {
     // Assuming resp.data is the array you want to store
