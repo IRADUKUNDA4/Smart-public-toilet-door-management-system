@@ -49,11 +49,15 @@ fetch('https://pink-worrisome-rabbit.cyclic.app/signup')
             const priceCell = document.createElement('td');
             priceCell.textContent = user.wallet;
             row.appendChild(priceCell);
+
+            // const emailCell = document.createElement('td');
+            // priceCell.textContent = user.wallet;
+            // row.appendChild(priceCell);
         
-            const statusCell = document.createElement('td');
             const statusSpan = document.createElement('span');
             statusSpan.className = `status`;
-            statusSpan.textContent = "user.status"; // This line seems to be incorrect. You probably meant statusSpan.textContent = user.status;
+            statusSpan.textContent = user.email; // This line seems to be incorrect. You probably meant statusSpan.textContent = user.status;
+            const statusCell = document.createElement('td');
             statusCell.appendChild(statusSpan);
             row.appendChild(statusCell);
             // Append the row to the table body
