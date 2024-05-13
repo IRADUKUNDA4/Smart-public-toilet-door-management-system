@@ -14,46 +14,84 @@ toggle.onclick = function () {
 };
 
 let storedBlogs = [];
+function fetchDataAndDisplay() {
+  fetch('https://weak-gold-kitten-coat.cyclic.app/signup')
+ .then(response => response.json())
+ .then(async (resp) => {
+      storedBlogs = await resp.data;
+      localStorage.setItem('all_users', JSON.stringify(storedBlogs));
 
-fetch('https://handsome-puce-snapper.cyclic.app/signup')
-// fetch('https://public-bn.onrender.com/signup/')
-.then(response => response.json())
-.then(async (resp) => {
-    storedBlogs = await resp.data;
-    localStorage.setItem('all_users', JSON.stringify(storedBlogs));
-
-    if (storedBlogs) {
-        console.log("storedBlogs : ");
-        storedBlogs.forEach(user => {
-            console.log("each user : ");
-            console.log(user);
-            const row = document.createElement('tr');
-        
-            const cardNoCell = document.createElement('td');
-            cardNoCell.textContent = user.username;
-            row.appendChild(cardNoCell);
-        
-            const priceCell = document.createElement('td');
-            priceCell.textContent = user.wallet;
-            row.appendChild(priceCell);
-        
-            const statusSpan = document.createElement('span');
-            statusSpan.className = `status`;
-            statusSpan.textContent = user.email;
-            const statusCell = document.createElement('td');
-            statusCell.appendChild(statusSpan);
-            row.appendChild(statusCell);
-            // Append the row to the table body
-            row.addEventListener('click', () => {
-              // alert("this row is clicked");
-              
-              window.location.href = `/sendtocard.html?id=${user.username}`;
-
+      if (storedBlogs) {
+          console.log("storedBlogs : ");
+          storedBlogs.forEach(user => {
+              console.log("each user : ");
+              console.log(user);
+              const row = document.createElement('tr');
+          
+              const cardNoCell = document.createElement('td');
+              cardNoCell.textContent = user.username;
+              row.appendChild(cardNoCell);
+          
+              const priceCell = document.createElement('td');
+              priceCell.textContent = user.wallet;
+              row.appendChild(priceCell);
+          
+              const statusSpan = document.createElement('span');
+              statusSpan.className = `status`;
+              statusSpan.textContent = user.email;
+              const statusCell = document.createElement('td');
+              statusCell.appendChild(statusSpan);
+              row.appendChild(statusCell);
+              row.addEventListener('click', () => {
+                window.location.href = `/sendtocard.html?id=${user.username}`;
+            });
+              table.querySelector('tbody').appendChild(row);
           });
-            table.querySelector('tbody').appendChild(row);
-        });
-    }
-});
+      }
+  });
+}
+
+window.onload = fetchDataAndDisplay;
+
+
+// fetch('https://weak-gold-kitten-coat.cyclic.app/signup')
+// .then(response => response.json())
+// .then(async (resp) => {
+//     storedBlogs = await resp.data;
+//     localStorage.setItem('all_users', JSON.stringify(storedBlogs));
+
+//     if (storedBlogs) {
+//         console.log("storedBlogs : ");
+//         storedBlogs.forEach(user => {
+//             console.log("each user : ");
+//             console.log(user);
+//             const row = document.createElement('tr');
+        
+//             const cardNoCell = document.createElement('td');
+//             cardNoCell.textContent = user.username;
+//             row.appendChild(cardNoCell);
+        
+//             const priceCell = document.createElement('td');
+//             priceCell.textContent = user.wallet;
+//             row.appendChild(priceCell);
+        
+//             const statusSpan = document.createElement('span');
+//             statusSpan.className = `status`;
+//             statusSpan.textContent = user.email;
+//             const statusCell = document.createElement('td');
+//             statusCell.appendChild(statusSpan);
+//             row.appendChild(statusCell);
+//             // Append the row to the table body
+//             row.addEventListener('click', () => {
+//               // alert("this row is clicked");
+              
+//               window.location.href = `/sendtocard.html?id=${user.username}`;
+
+//           });
+//             table.querySelector('tbody').appendChild(row);
+//         });
+//     }
+// });
 const table = document.querySelector('.details table');
 
 function getIdFromUrl() {
@@ -67,7 +105,7 @@ alert('add amount clicked');
 
 const id = getIdFromUrl();
 
-const url = `https://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
+const url = `https://weak-gold-kitten-coat.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
 // const url = `http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value}`;
 let  updateWallet = async () => {
   
