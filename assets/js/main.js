@@ -1,19 +1,9 @@
 // add hovered class to selected list item
 let list = document.querySelectorAll(".navigation li");
 let button = document.querySelectorAll(".signup-btn");
+let amount = document.getElementById("amount");
 
-console.log("test form loaded")
 
-function activeLink() {
-  list.forEach((item) => {
-    item.classList.remove("hovered");
-  });
-  this.classList.add("hovered");
-}
-
-list.forEach((item) => item.addEventListener("mouseover", activeLink));
-
-// Menu Toggle
 let toggle = document.querySelector(".toggle");
 let navigation = document.querySelector(".navigation");
 let main = document.querySelector(".main");
@@ -23,7 +13,6 @@ toggle.onclick = function () {
   main.classList.toggle("active");
 };
 
-// Declare storedBlogs outside of the fetch call to make it accessible in the subsequent code
 let storedBlogs = [];
 
 fetch('https://handsome-puce-snapper.cyclic.app/signup')
@@ -56,39 +45,60 @@ fetch('https://handsome-puce-snapper.cyclic.app/signup')
             row.appendChild(statusCell);
             // Append the row to the table body
             row.addEventListener('click', () => {
-              alert("this row is clicked", user.username, user.wallet, user.email);
-              // window.location.href = '/sendtocard.html';
+              // alert("this row is clicked");
+              
+              window.location.href = `/sendtocard.html?id=${user.username}`;
 
           });
             table.querySelector('tbody').appendChild(row);
         });
     }
 });
-const users = [
-  { cardNo: '220202020', price: '100 Frw', status: 'Paid' },
-  { cardNo: '220202020', price: '100 Frw', status: 'not paid' },
-  { cardNo: '220202020', price: '100 Frw', status: 'in Progress' }
-];
-
 // Step 2: Select the table element
 const table = document.querySelector('.details table');
 
 // Step 3: Iterate over the array of users and insert them into the table
 
 // document.addEventListener('DOMContentLoaded', function() {
-  const loginForm = document.getElementById('loginForm');
+  // const loginForm = document.getElementById('loginForm');
 
-  button.addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the form from submitting normally
-
-      const username = document.getElementById('username').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('consfirm_password').value;
-
-      console.log('Username:', username);
-      console.log('Email:', email);
-      console.log('Password:', password);
-      console.log('Confirm Password:', confirmPassword);
-  });
 // });
+
+function getIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('id');
+}
+
+addAmount.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+alert('add amount clicked');
+
+const id = getIdFromUrl();
+
+const url = `http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=222`;
+// const url = `http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value}`;
+let  updateWallet = async () => {
+  
+try {
+    // Send the POST request
+    const response = await fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+
+    if (!response.ok) {
+      alert('error');
+        throw new Error(`HTTP error status: ${response.status}`);
+    }
+    alert('Amount added successfully');
+    window.location.href = `/index`;
+
+} catch (error) {
+    console.error('Error:', error);
+}}
+updateWallet();
+
+});
+

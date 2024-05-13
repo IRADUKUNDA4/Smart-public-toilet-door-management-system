@@ -84,22 +84,24 @@
             </div>
 
            <!-- body -->
-  <center> <div style="background-color: rgb(150, 155, 153); width: 30rem; height: 25rem; padding: 2rem;box-shadow:black;">
+  <center> 
+    <div style="background-color: rgb(150, 155, 153); width: 30rem; height: 15rem; padding: 2rem;box-shadow:black;">
         <h3>
            SEND MONEY TO CARD
         </h3><br><br>
-     <label for="card_no">   Card:<br>
-      <input type="text" name="card_no" id="" placeholder="Enter Card No" style="padding: 0.5rem; width: 20rem;border: 1px;"></label><br><br>
-     <label for="mobile_no">   Mobile Number:<br>
-      <input type="text" name="mobile_no" id="" placeholder="Enter Number" style="padding: 0.5rem; width: 20rem;border: 1px;"></label><br><br>
+     <!-- <label for="card_no">   Card:<br>
+      <input type="text" name="card_no" id="" placeholder="Enter Card No" style="padding: 0.5rem; width: 20rem;border: 1px;"></label><br><br> -->
+     <!-- <label for="mobile_no">   Mobile Number:<br>
+      <input type="text" name="mobile_no" id="" placeholder="Enter Number" style="padding: 0.5rem; width: 20rem;border: 1px;"></label><br><br> -->
      <label for="amount">   Amount:<br>
-      <input type="text" name="amount" id="" placeholder="Amount" style="padding: 0.5rem; width: 20rem;border: 1px;"></label><br><br><br>
+      <input type="text" name="amount" class="amount" id="amount" placeholder="Enter amount" style="padding: 0.5rem; width: 20rem;border: 1px;"></label><br><br><br>
 
-      <button type="submit" style="height: 2rem; width: 5rem; background-color: rgb(17, 144, 140);">Send</button>
+      <button id="addAmount" type="button" style="height: 2rem; width: 5rem; background-color: rgb(17, 144, 140); cursor: pointer; ">Send</button>
+      <!-- <button id="addAmount" style="height: 2rem; width: 5rem; background-color: rgb(17, 144, 140); cursor: pointer; ">Send</button> -->
     </div></center> 
             
     <!-- =========== Scripts =========  -->
-    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
 
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
