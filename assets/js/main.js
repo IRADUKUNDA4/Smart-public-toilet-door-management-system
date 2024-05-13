@@ -54,15 +54,7 @@ fetch('https://handsome-puce-snapper.cyclic.app/signup')
         });
     }
 });
-// Step 2: Select the table element
 const table = document.querySelector('.details table');
-
-// Step 3: Iterate over the array of users and insert them into the table
-
-// document.addEventListener('DOMContentLoaded', function() {
-  // const loginForm = document.getElementById('loginForm');
-
-// });
 
 function getIdFromUrl() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -75,7 +67,7 @@ alert('add amount clicked');
 
 const id = getIdFromUrl();
 
-const url = `http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=222`;
+const url = `https://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
 // const url = `http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value}`;
 let  updateWallet = async () => {
   
@@ -93,7 +85,7 @@ try {
         throw new Error(`HTTP error status: ${response.status}`);
     }
     alert('Amount added successfully');
-    window.location.href = `/index`;
+    window.location.href = `/index.html`;
 
 } catch (error) {
     console.error('Error:', error);
