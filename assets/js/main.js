@@ -30,11 +30,9 @@ fetch('https://handsome-puce-snapper.cyclic.app/signup')
 // fetch('https://public-bn.onrender.com/signup/')
 .then(response => response.json())
 .then(async (resp) => {
-    // Assuming resp.data is the array you want to store
     storedBlogs = await resp.data;
     localStorage.setItem('all_users', JSON.stringify(storedBlogs));
 
-    // Now you can use storedBlogs here
     if (storedBlogs) {
         console.log("storedBlogs : ");
         storedBlogs.forEach(user => {
@@ -49,18 +47,17 @@ fetch('https://handsome-puce-snapper.cyclic.app/signup')
             const priceCell = document.createElement('td');
             priceCell.textContent = user.wallet;
             row.appendChild(priceCell);
-
-            // const emailCell = document.createElement('td');
-            // priceCell.textContent = user.wallet;
-            // row.appendChild(priceCell);
         
             const statusSpan = document.createElement('span');
             statusSpan.className = `status`;
-            statusSpan.textContent = user.email; // This line seems to be incorrect. You probably meant statusSpan.textContent = user.status;
+            statusSpan.textContent = user.email;
             const statusCell = document.createElement('td');
             statusCell.appendChild(statusSpan);
             row.appendChild(statusCell);
             // Append the row to the table body
+            row.addEventListener('click', () => {
+              window.location.href = '/path/to/redirect';
+          });
             table.querySelector('tbody').appendChild(row);
         });
     }
