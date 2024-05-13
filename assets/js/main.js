@@ -56,7 +56,9 @@ fetch('https://handsome-puce-snapper.cyclic.app/signup')
             row.appendChild(statusCell);
             // Append the row to the table body
             row.addEventListener('click', () => {
-              window.location.href = '/path/to/redirect';
+              alert("this row is clicked", user.username, user.wallet, user.email);
+              // window.location.href = '/sendtocard.html';
+
           });
             table.querySelector('tbody').appendChild(row);
         });
