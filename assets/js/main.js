@@ -43,7 +43,7 @@ function fetchDataAndDisplay() {
               statusCell.appendChild(statusSpan);
               row.appendChild(statusCell);
               row.addEventListener('click', () => {
-                window.location.href = `/sendtocard.html?id=${user.username}`;
+                window.location.href = `/public-fn/sendtocard.html?id=${user.username}`;
             });
               table.querySelector('tbody').appendChild(row);
           });
@@ -101,7 +101,6 @@ function getIdFromUrl() {
 
 addAmount.addEventListener('click', function(event) {
   event.preventDefault(); // Prevent the form from submitting normally
-alert('add amount clicked');
 
 const id = getIdFromUrl();
 
@@ -123,7 +122,7 @@ try {
         throw new Error(`HTTP error status: ${response.status}`);
     }
     alert('Amount added successfully');
-    window.location.href = `/index.html`;
+    window.location.href = `/public-fn/index.html`;
 
 } catch (error) {
     console.error('Error:', error);
