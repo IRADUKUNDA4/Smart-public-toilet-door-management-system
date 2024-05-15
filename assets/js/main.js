@@ -43,7 +43,7 @@ function fetchDataAndDisplay() {
               statusCell.appendChild(statusSpan);
               row.appendChild(statusCell);
               row.addEventListener('click', () => {
-                window.location.href = `/public-fn/sendtocard.html?id=${user.username}`;
+                window.location.href = `/Smart-public-toilet-door-management-system/sendtocard.html?id=${user.username}`;
             });
               table.querySelector('tbody').appendChild(row);
           });
@@ -122,7 +122,7 @@ try {
         throw new Error(`HTTP error status: ${response.status}`);
     }
     alert('Amount added successfully');
-    window.location.href = `/public-fn/index.html`;
+    window.location.href = `/Smart-public-toilet-door-management-system/index.html`;
 
 } catch (error) {
     console.error('Error:', error);
