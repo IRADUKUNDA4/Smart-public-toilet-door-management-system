@@ -15,7 +15,7 @@ toggle.onclick = function () {
 
 let storedBlogs = [];
 function fetchDataAndDisplay() {
-  fetch('https://weak-gold-kitten-coat.cyclic.app/signup')
+  fetch('https://weak-gold-llama-wrap.cyclic.app/signup')
  .then(response => response.json())
  .then(async (resp) => {
       storedBlogs = await resp.data;
@@ -54,7 +54,7 @@ function fetchDataAndDisplay() {
 window.onload = fetchDataAndDisplay;
 
 
-// fetch('https://weak-gold-kitten-coat.cyclic.app/signup')
+// fetch('https://weak-gold-llama-wrap.cyclic.app/signup')
 // .then(response => response.json())
 // .then(async (resp) => {
 //     storedBlogs = await resp.data;
@@ -104,7 +104,7 @@ addAmount.addEventListener('click', function(event) {
 
 const id = getIdFromUrl();
 
-const url = `https://weak-gold-kitten-coat.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
+const url = `https://weak-gold-llama-wrap.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
 // const url = `http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value}`;
 let  updateWallet = async () => {
   
