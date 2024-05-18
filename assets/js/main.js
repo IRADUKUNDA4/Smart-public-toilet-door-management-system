@@ -149,7 +149,7 @@ toggle.onclick = function () {
 
 let storedBlogs = [];
 function fetchDataAndDisplay() {
-  fetch("http://weak-gold-llama-wrap.cyclic.app/signup")
+  fetch("https://strange-crab-slacks.cyclic.app/signup")
     .then((response) => response.json())
     .then(async (resp) => {
       numbersDiv.innnerHTML = "user.wallet";
@@ -191,7 +191,7 @@ function fetchDataAndDisplay() {
 
 window.onload = fetchDataAndDisplay;
 
-// fetch('http://weak-gold-llama-wrap.cyclic.app/signup')
+// fetch('https://strange-crab-slacks.cyclic.app/signup')
 // .then(response => response.json())
 // .then(async (resp) => {
 //     storedBlogs = await resp.data;
@@ -241,7 +241,7 @@ addAmount.addEventListener("click", function (event) {
 
   const id = getIdFromUrl();
 
-  const url = `http://weak-gold-llama-wrap.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
+  const url = `https://strange-crab-slacks.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
   // const url = http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value};
   let updateWallet = async () => {
     try {
