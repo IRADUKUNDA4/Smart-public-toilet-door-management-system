@@ -149,7 +149,7 @@ toggle.onclick = function () {
 
 let storedBlogs = [];
 function fetchDataAndDisplay() {
-  fetch("https://witty-bull-handkerchief.cyclic.app/signup")
+  fetch("http://localhost:4000/signup")
     .then((response) => response.json())
     .then(async (resp) => {
       numbersDiv.innnerHTML = "user.wallet";
@@ -241,7 +241,7 @@ addAmount.addEventListener("click", function (event) {
 
   const id = getIdFromUrl();
 
-  const url = `https://witty-bull-handkerchief.cyclic.app/transact/?id=${id}&op=add&amount=${amount.value}`;
+  const url = `http://localhost:4000/transact/?id=${id}&op=add&amount=${amount.value}`;
   // const url = http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value};
   let updateWallet = async () => {
     try {
