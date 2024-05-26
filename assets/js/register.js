@@ -22,7 +22,7 @@ registerCard.addEventListener("click", function (event) {
       }
       alert("Card registered successfully");
     //   window.location.href = "/Smart-public-toilet-door-register-system/index.html";
-      window.location.href = "/index.html";
+      window.location.href = "/Smart-public-toilet-door-management-system/index.html";
     } catch (error) {
       console.error("Error:", error);
     }
