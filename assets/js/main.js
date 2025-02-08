@@ -15,7 +15,7 @@ toggle.onclick = function () {
 
 let storedBlogs = [];
 function fetchDataAndDisplay() {
-  fetch("http://localhost:4000/signup")
+  fetch("https://toilet-backend-kmj5c2gvv-iradukunda-thierrys-projects.vercel.app/signup")
     .then((response) => response.json())
     .then(async (resp) => {
       numbersDiv.innnerHTML = "user.wallet";
@@ -69,7 +69,7 @@ addAmount.addEventListener("click", function (event) {
 
   const id = getIdFromUrl();
 
-  const url = `https://toilet-backend-qv1c-2gnz323z2-iradukunda-thierrys-projects.vercel.app/transact/?id=${id}&op=add&amount=${amount.value}`;
+  const url = `https://toilet-backend-kmj5c2gvv-iradukunda-thierrys-projects.vercel.app/transact/?id=${id}&op=add&amount=${amount.value}`;
   let updateWallet = async () => {
     try {
       // Send the POST request
