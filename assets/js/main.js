@@ -69,8 +69,7 @@ addAmount.addEventListener("click", function (event) {
 
   const id = getIdFromUrl();
 
-  const url = `http://localhost:4000/transact/?id=${id}&op=add&amount=${amount.value}`;
-  // const url = http://handsome-puce-snapper.cyclic.app/transact/?id=${id}&op=sub&amount=${amount.value};
+  const url = `https://toilet-backend-qv1c-2gnz323z2-iradukunda-thierrys-projects.vercel.app/transact/?id=${id}&op=add&amount=${amount.value}`;
   let updateWallet = async () => {
     try {
       // Send the POST request
